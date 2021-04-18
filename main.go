@@ -97,18 +97,23 @@ func convert() {
 		log.Fatal(err)
 	}
 	for _, file := range files {
+		// .epub
 		cmd := exec.Command("ebook-convert", "html/"+file.Name(), "epub/"+strings.ReplaceAll(file.Name(), ".html", ".epub"))
 		stdoutStderr, err := cmd.CombinedOutput()
 		if err != nil {
 			log.Println(err)
 		}
 		fmt.Printf("%s\n", stdoutStderr)
+
+		// .azw3
 		cmd = exec.Command("ebook-convert", "html/"+file.Name(), "azw3/"+strings.ReplaceAll(file.Name(), ".html", ".azw3"))
 		stdoutStderr, err = cmd.CombinedOutput()
 		if err != nil {
 			log.Println(err)
 		}
 		fmt.Printf("%s\n", stdoutStderr)
+
+		// .mobi
 		cmd = exec.Command("ebook-convert", "html/"+file.Name(), "mobi/"+strings.ReplaceAll(file.Name(), ".html", ".mobi"))
 		stdoutStderr, err = cmd.CombinedOutput()
 		if err != nil {
