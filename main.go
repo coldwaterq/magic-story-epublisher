@@ -103,6 +103,18 @@ func convert() {
 			log.Println(err)
 		}
 		fmt.Printf("%s\n", stdoutStderr)
+		cmd = exec.Command("ebook-convert", "html/"+file.Name(), "azw3/"+strings.ReplaceAll(file.Name(), ".html", ".azw3"))
+		stdoutStderr, err = cmd.CombinedOutput()
+		if err != nil {
+			log.Println(err)
+		}
+		fmt.Printf("%s\n", stdoutStderr)
+		cmd = exec.Command("ebook-convert", "html/"+file.Name(), "mobi/"+strings.ReplaceAll(file.Name(), ".html", ".mobi"))
+		stdoutStderr, err = cmd.CombinedOutput()
+		if err != nil {
+			log.Println(err)
+		}
+		fmt.Printf("%s\n", stdoutStderr)
 	}
 }
 
