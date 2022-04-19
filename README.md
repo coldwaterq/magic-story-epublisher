@@ -1,5 +1,6 @@
 # magic-story-epublisher
- Have calibre installed, thi swill add the ebook-convert binary to your path.
+Have calibre installed, thi swill add the ebook-convert binary to your path.
+    https://calibre-ebook.com/download
 
 grab the epub, azw3, html, or mobi format of each story.
 
